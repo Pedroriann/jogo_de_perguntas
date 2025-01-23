@@ -31,7 +31,7 @@ def jogo_perguntas():
     print(f"Fim do jogo! Você acertou {pontos} de {len(perguntas)} perguntas.")
     if pontos == len(perguntas):
         print("Parabéns! Você acertou todas as perguntas!")
-    elif pontos > len(perguntas) // 2:
+    elif pontos > len(perguntas) / 2:
         print("Bom trabalho! Você foi bem.")
     else:
         print("Continue praticando e tente novamente!")
