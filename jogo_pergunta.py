@@ -13,7 +13,7 @@ def jogo_perguntas():
         "Paris",
         "8",
         "Miguel de Cervantes",
-        "Mercrio"
+        "Mercúrio"
     ]
     
     pontos = 0
