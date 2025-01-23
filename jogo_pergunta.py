@@ -1,5 +1,3 @@
-# Jogo simples de perguntas e respostas
-
 def jogo_perguntas():
     print("Bem-vindo ao jogo de perguntas e respostas!")
     print("Responda corretamente para ganhar pontos.")
