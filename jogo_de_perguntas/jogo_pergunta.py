@@ -1,21 +1,24 @@
 def jogo_perguntas():
     print("Bem-vindo ao jogo de perguntas e respostas!")
-    print("Responda corretamente para ganhar pontos.")
-    print("-----------------------------------------\n")
     
-    pergunta = "Qual é a capital da França?" 
-    resposta_correta = "Paris" 
+    perguntas = [
+        "Qual é a capital da França?",
+        "Quanto é 7 x 8?", 
+        "Quem descobriu o Brasil?"
+    ]
+    respostas = [
+        "Paris", 
+        "56", 
+        "Pedro Alvares Cabral"
+    ]
     
-    print(pergunta)
-    resposta_jogador = input("Sua resposta: ").strip()  
-    
-    if resposta_jogador.lower() == resposta_correta.lower(): 
-        print("Resposta correta! Parabéns!\n")
-    else:
-        print(f"Resposta errada! A resposta correta era: {resposta_correta}\n")
-    
-    print("-----------------------------------------")
-    print("Fim do jogo! Obrigado por jogar!")
-
+    for i in range(3):
+        print(perguntas[i])
+        resposta_jogador = input("Sua resposta: ").strip()
+        
+        if resposta_jogador.lower() == respostas[i].lower():
+            print("Resposta correta! Parabéns!\n")
+        else:
+            print(f"Resposta errada! A resposta correta era: {respostas[i]}\n")
+        
 jogo_perguntas()
-
