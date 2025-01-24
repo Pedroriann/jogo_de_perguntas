@@ -18,31 +18,44 @@ def jogo_perguntas():
     
     pontos = 0
     max_tentativas = 3
+    pergunta_atual = 0
     
-    for i in range(len(perguntas)):
+    while pergunta_atual < len(perguntas):
         tentativas = 0
-        print(f"Pergunta {i + 1}: {perguntas[i]}")
+        print(f"Pergunta {pergunta_atual + 1}: {perguntas[pergunta_atual]}")
         
         while tentativas < max_tentativas:
             resposta_jogador = input(f"Tentativa {tentativas + 1}/{max_tentativas} - Sua resposta: ").strip()
-            if resposta_jogador.lower() == respostas[i].lower():
+            if resposta_jogador.lower() == respostas[pergunta_atual].lower():
                 print("Resposta correta!\n")
                 pontos += 1
-                break 
+                break
             else:
                 tentativas += 1
                 if tentativas < max_tentativas:
                     print("Resposta errada! Tente novamente.\n")
                 else:
-                    print(f"Resposta errada! A resposta correta era: {respostas[i]}\n")
+                    print(f"Resposta errada! A resposta correta era: {respostas[pergunta_atual]}\n")
+        
+        if tentativas == max_tentativas:
+            resposta_errada = input("Você quer tentar de novo a pergunta anterior? (s/n): ").strip().lower()
+            if resposta_errada == 's' and pergunta_atual > 0:
+                pergunta_atual -= 1  
+                print("Você voltou para a pergunta anterior.")
+            else:
+                pergunta_atual += 1 
+        else:
+            pergunta_atual += 1
     
     print("-----------------------------------------")
     print(f"Fim do jogo! Você acertou {pontos} de {len(perguntas)} perguntas.")
     if pontos == len(perguntas):
         print("Parabéns! Você acertou todas as perguntas!")
-    elif pontos > len(perguntas) // 2:
+    elif pontos > len(perguntas) / 2:
         print("Bom trabalho! Você foi bem.")
     else:
         print("Continue praticando e tente novamente!")
-        
+
 jogo_perguntas()
+
+#Não consegui fazer voltar na primeira pergunta, se você tentar ele só passa pra próxima, mas depois ele volta normal 
